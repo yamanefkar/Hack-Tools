@@ -35,6 +35,29 @@ echo -e '\033[31;40;1m
 
 
 read -p "İşlem Numarası: " islem
+if [[ $islem == 1 || $islem == 01 ]]; then
+pkg install git -y
+pkg install python python2 -y
+pkg install wget -y
+pkg install curl -y
+pkg install ruby -y
+pkg install php -y
+pkg install pip pip2 -y
+pkg install clang -y
+pkg install vim -y
+pkg install nano -y
+apt install proot -y
+pkg install cat -y
+pkg install figlet -y
+pkg install cmatrix -y
+pkg install perl -y
+apt update
+apt upgrade -y
+clear
+echo -e '\033[31;40;1m              Kurulum Bitti!'
+sleep 2
+bash start.sh
+
 if [[ $islem == 2 || $islem == 02 ]]; then
         clear
         cd $HOME
@@ -43,7 +66,7 @@ if [[ $islem == 2 || $islem == 02 ]]; then
         cd $HOME/xerxes/
         chmod 777 xerxes.c
         clang  xerxes.c -o  xerxes
-        slepp 2
+        sleep 2
         echo -e '\033[31;40;1mKurulum Tamamlandı...'
         bash start.sh
 
