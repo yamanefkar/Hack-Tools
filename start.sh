@@ -58,7 +58,7 @@ echo -e '\033[31;40;1m              Kurulum Bitti!'
 sleep 2
 bash start.sh
 
-if [[ $islem == 2 || $islem == 02 ]]; then
+elif [[ $islem == 2 || $islem == 02 ]]; then
         clear
         cd $HOME
         git clone https://github.com/zanyarjamal/xerxes
