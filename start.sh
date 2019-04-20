@@ -288,6 +288,9 @@ elif [[ $islem == 21 ]]; then
 #menu 21
 elif [[ $islem == 22 ]]; then
         clear
+	apt update
+	apt upgrade -y
+	pkg install proot -y
         cd $HOME
         git clone https://github.com/Neo-Oli/termux-ubuntu
         sleep 5
