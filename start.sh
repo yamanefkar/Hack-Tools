@@ -107,7 +107,7 @@ elif [[ $islem == 5 || $islem == 05 ]]; then
 elif [[ $islem == 6 || $islem == 06 ]]; then
         clear
         cd $HOME
-        pkg install sqlmap
+        git clone https://github.com/sqlmapproject/sqlmap
         sleep 2
         echo -e '\033[31;40;1mKurulum Tamamlandı...'
 	cd $HOME/Hack-Tools
