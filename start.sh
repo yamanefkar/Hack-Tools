@@ -27,7 +27,7 @@ echo -e '\033[31;40;1m
 \e[32m[9]\e[33mİPGeoLocation		\e[32m[20]\e[33mMd-5 Force
 \e[32m[10]\e[33mTc-Kimlik			\e[32m[21]\e[33mİnsta-brute	
 \e[32m[11]\e[33mİnstagram-Spam		\e[32m[22]\e[33mTermux-Debian
-
+\e[32m[23]\e[33mTermux-all-tool
 	'
 
 
@@ -35,24 +35,82 @@ echo -e '\033[31;40;1m
 
 
 read -p "İşlem Numarası: " islem
-if [[ $islem == 1 || $islem == 01 ]]; then
-pkg install git -y
-pkg install python python2 -y
-pkg install wget -y
-pkg install curl -y
-pkg install ruby -y
-pkg install php -y
-pkg install pip pip2 -y
-pkg install clang -y
-pkg install vim -y
-pkg install nano -y
-apt install proot -y
-pkg install cat -y
-pkg install figlet -y
-pkg install cmatrix -y
-pkg install perl -y
+
+alltool(){
+
+cd $HOME
+git clone https://github.com/zanyarjamal/xerxes
+cd $HOME/xerxes/
+chmod 777 xerxes.c
+clang  xerxes.c -o  xerxes
+cd $HOME
+git clone https://github.com/b3-v3r/Hunner
+cd $HOME
+chmod 777 *
+rm -rf /data/data/com.termux/files/usr/bin/ngrok
+mv -v ngrok /data/data/com.termux/files/usr/bin
+cd $HOME
+git clone https://github.com/ciku370/ko-dork
+cd $HOME
+git clone https://github.com/sqlmapproject/sqlmap
+cd $HOME
+git clone https://github.com/s0md3v/Breacher
+cd $HOME
+git clone https://github.com/maldevel/IPGeoLocation
+cd IPGeoLocation
+pip install -r requirements.txt
+cd $HOME
+git clone https://github.com/ibrahimirdem/tckimlik
+cd $HOME
+git clone https://github.com/cybuly/instaspam
+cd instaspam
+pip install colorama
+cd $HOME
+git clone https://github.com/xHak9x/finduser
+cd $HOME
+pkg install nmap -y
+cd $HOME
+git clone https://github.com/Xi4u7/A-Rat
+cd A-Rat
+chmod 777 A-Rat.py
+cd $HOME
+git clone https://github.com/yamanefkar/Camera-Tr
+cd $HOME
+git clone https://github.com/iammtw/Weeman
+cd $HOME
+git clone https://github.com/CiKu370/OSIF
+cd OSIF
+pip2 install -r requirements.txt
+
+cd $HOME
+git clone https://github.com/sundowndev/PhoneInfoga
+cd PhoneInfoga
+chmod 777 *
+pip install -r requirements.txt
+
+cd $HOME
+git clone https://github.com/ciku370/hasher
+
+git clone https://github.com/Pure-L0G1C/Instagram
+cd Instagram
+pip3 install -r requirements.txt
 apt update
 apt upgrade -y
+pkg install proot -y
+cd $HOME
+git clone https://github.com/Neo-Oli/termux-ubuntu
+cd termux-ubuntu
+bash ubuntu.sh
+
+
+
+}
+
+
+if [[ $islem == 1 || $islem == 01 ]]; then
+apt update
+apt upgrade -y
+pkg install git python python2 wget curl ruby php pip pip2 clang vim nano proot cat figlet cmatrix perl -y
 clear
 echo -e '\033[31;40;1m              Kurulum Bitti!'
 sleep 2
@@ -297,17 +355,8 @@ elif [[ $islem == 22 ]]; then
         cd termux-ubuntu
         bash ubuntu.sh
         sleep 2
-        mv -v start-ubuntu.sh /data/data/com.termux/files/usr/bin
-        sleep 2
-        echo -e '\033[31;40;1mKurulum Tamamlandı...'
-	cd $HOME/Hack-Tools
-        bash start.sh
 
-
-else   
-	clear
-        echo -e '\033[36;40;1m Girdiğniz İşlem Numarasını Kontrol Ediniz....'	
-	sleep 1
-	clear 
-	bash start.sh
-fi
+#menu22
+elif [[ $islem == 22 ]]; then
+        clear
+        alltool
